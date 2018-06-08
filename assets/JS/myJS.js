@@ -1,21 +1,30 @@
 $(document).ready(function() {
 
 	//array of all animals
-	var myData = ["Cat", "Dog", "Bear", "Panda", "Fox", "Deer"];
+	var myData = ["cat", "dog", "bear", "panda", "fox", "deer"];
 
 	// loop fuction to create buttons for each element in the array
 	for (i=0; i<myData.length; i++ ) {
 		//write button on HTML page
-		$("<button>").addClass("btn btn-info mx-2").appendTo($("#buttonsHolder")).attr("value", myData[i]).text(myData[i]);
+		$("<button>").addClass("btn btn-info mx-2 animalButton").appendTo($("#buttonsHolder")).attr("value", myData[i]).text(myData[i]);
 	};
 
-	//a var to hold what user type in
-	var userInput = $("#userInput").val();
 
+	$("#creatingButton").on("click", function(){
+		//prevents the submit button from trying to submit a form when clicked
+        event.preventDefault();
+		//a var to hold what user type in
+		var userInput = $("#userInput").val().toLowerCase();
+		//push the word user type into the array
+		myData.push(userInput);
+		//create a button for the new word
+		var i = myData.length -1;
+		$("<button>").addClass("btn btn-info mx-2 animalButton").appendTo($("#buttonsHolder")).attr("value", myData[i]).text(myData[i]);
+	});
 
 
  	// Adding click event listen listener to all buttons
-    $("button").on("click", function() {
+    $(document).on("click", ".animalButton", function() {
 
     	//clear the img holder
     	$("#gifHolder").empty();
@@ -59,12 +68,6 @@ $(document).ready(function() {
           }
         });
     });
-
-
-
-
-
-
 	
 });
 
