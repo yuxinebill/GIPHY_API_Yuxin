@@ -10,12 +10,16 @@ $(document).ready(function() {
 	};
 
 	//a var to hold what user type in
-	var userTypeIn = event.key
+	var userInput = $("#userInput").val();
 
 
 
  	// Adding click event listen listener to all buttons
     $("button").on("click", function() {
+
+    	//clear the img holder
+    	$("#gifHolder").empty();
+
       // Grabbing and storing the data-animal property value from the button
       var animal = $(this).attr("value");
 
@@ -40,7 +44,7 @@ $(document).ready(function() {
           for (var i = 0; i < results.length; i++) {
 
             // Creating and storing a div tag
-            var animalDiv = $("<div>");
+            var animalDiv = $("<div>").addClass("d-inline m-2");
 
             // Creating and storing an image tag
             var animalImage = $("<img>");
