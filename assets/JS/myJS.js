@@ -2,11 +2,13 @@ $(document).ready(function() {
 
 	//array of all animals
 	var myData = ["cat", "dog", "bear", "panda", "fox", "deer"];
-
+	//write button on HTML page
+	function writeButton () {
+		$("<button>").addClass("btn btn-info mx-2 animalButton").appendTo($("#buttonsHolder")).attr("value", myData[i]).text(myData[i]);
+	}
 	// loop fuction to create buttons for each element in the array
 	for (i=0; i<myData.length; i++ ) {
-		//write button on HTML page
-		$("<button>").addClass("btn btn-info mx-2 animalButton").appendTo($("#buttonsHolder")).attr("value", myData[i]).text(myData[i]);
+		writeButton ();
 	};
 
 
@@ -19,7 +21,7 @@ $(document).ready(function() {
 		myData.push(userInput);
 		//create a button for the new word
 		var i = myData.length -1;
-		$("<button>").addClass("btn btn-info mx-2 animalButton").appendTo($("#buttonsHolder")).attr("value", myData[i]).text(myData[i]);
+		writeButton ();
 	});
 
 
