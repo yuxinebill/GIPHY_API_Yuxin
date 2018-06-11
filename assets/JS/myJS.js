@@ -38,7 +38,7 @@ $(document).ready(function() {
     } else {
   		//push the word user type into the array
   		myData.push(userInput);
-      //create a button for the new word
+      //create a button for the new word, pass indext of last element (new word) as parameter
   		writeButton (i = myData.length -1);
     }
 	});
