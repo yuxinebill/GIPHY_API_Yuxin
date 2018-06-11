@@ -7,9 +7,24 @@ $(document).ready(function() {
 		$("<button>").addClass("btn btn-info mx-2 animalButton").appendTo($("#buttonsHolder")).attr("value", myData[i]).text(myData[i]);
 	}
 	// loop fuction to create buttons for each element in the array
-	for (i=0; i<myData.length; i++ ) {
-		writeButton ();
-	};
+  function writeButtonsss () {
+    for (i=0; i<myData.length; i++ ) {
+    	writeButton ();
+    };
+  }
+  writeButtonsss ();
+
+  //when click reset button, then
+  $(".reset").on("click", function(){
+    //empty all gifs
+    $("#gifHolder").empty();
+    //empty all buttons
+    $("#buttonsHolder").empty();
+    //reset button data to original data
+    myData = ["cat", "dog", "bear", "panda", "fox", "deer"];
+    //write all original data into buttons
+    writeButtonsss ();
+  });
 
 	$("#creatingButton").on("click", function(){
 		//prevents the submit button from trying to submit a form when clicked
