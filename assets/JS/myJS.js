@@ -30,12 +30,17 @@ $(document).ready(function() {
 		//prevents the submit button from trying to submit a form when clicked
     event.preventDefault();
 		//a var to hold what user type in
-		var userInput = $("#userInput").val().toLowerCase().trim();
-		//push the word user type into the array
-		myData.push(userInput);
-		//create a button for the new word
-		var i = myData.length -1;
-		writeButton ();
+		var userInput = $("#userInput").val().trim().toLowerCase();
+
+    //if user do not type in any word, then show the alert
+    if ( userInput == "") {
+      alert("you did not type any word in!")
+    } else {
+  		//push the word user type into the array
+  		myData.push(userInput);
+      //create a button for the new word
+  		writeButton (i = myData.length -1);
+    }
 	});
 
 
