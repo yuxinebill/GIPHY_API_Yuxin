@@ -92,7 +92,7 @@ $(document).ready(function() {
         $(imgBeClicked).on("click", function() {
 
           // var k is the indext of image in all 10 images listed 
-          k=$(this).attr("id");
+          k = $(this).attr("id");
 
           //if the status is still then
           if ($(this).attr("status") == "still") {
@@ -109,10 +109,8 @@ $(document).ready(function() {
             $(this).attr("status","still");
           };
         });
-
       });
   });
-
 });
 
 
